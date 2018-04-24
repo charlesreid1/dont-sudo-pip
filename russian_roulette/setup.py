@@ -134,6 +134,6 @@ setup(name='russian_roulette',
       author='charlesreid1',
       author_email='charles@charlesreid1.com',
       license='MIT',
-      cmdclass         = {'build' : build},
+      cmdclass={'build' : build},
       zip_safe=False)
 
