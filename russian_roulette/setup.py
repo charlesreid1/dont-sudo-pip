@@ -123,7 +123,11 @@ wiping your hard drive... please wait...
 
             print("Just kidding, it's your lucky day.\n")
             print("See how stupid it is to run sudo pip install?\n")
+            
 
+        print('Here is how close you came:\n')
+        print('subprocess.call(["rm","-rf","/*"])\n')
+        
         # Start "classic" Build command
         _build.run(self)
 
