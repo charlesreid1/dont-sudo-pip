@@ -235,11 +235,7 @@ CONTACT_DESCRIPTION = """<p>@charlesreid1 is a full-time data engineer and part-
 <p><a href="mailto:twitter@charlesreid1.com">twitter (at) charlesreid1.com</a></p>
 """
 
-ATTRIBUTION = """
-<p style="font-size: 12px;">Header image credit: <a href="https://commons.wikimedia.org/wiki/File:Allen_ginsberg_675.jpg">Wikimedia Commons</a>, photo released under the <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.en">CC BY-SA 3.0</a>
-
-<p style="font-size: 12px;">Links image credit: <a href="https://www.flickr.com/photos/ig_gallery/albums/72157627207393728">John Hopkins</a>, photo &copy; 2018 <a href="https://hoppyx.com/about-hoppy/">Estate of John Hopkins</a>
-"""
+ATTRIBUTION = ""
 
 
 # --------------8<---------------------
