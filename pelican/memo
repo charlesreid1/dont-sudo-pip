@@ -1,0 +1,3 @@
+To convert an mp4 to a gif:
+
+ffmpeg -i innov8tr-928073630138867712-20171107_173610-gif1.mp4 -vf scale=320:-1 -r 10 -f image2pipe -vcodec ppm - | convert -delay 5 -loop 0 - output.gif
