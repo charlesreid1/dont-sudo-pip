@@ -1,17 +1,33 @@
 # dont-sudo-pip
 
-running `sudo pip install` is dangerous:
+There are three branches in this repo:
 
-* typesquatting
-* malicious packages
-* system commands
+* `gh-pages` - contains static site content
+* `pelican` - contains files for generating static site content
+* `source` - contains the source code for the russian roulette pip package
 
-it's basically the same as giving a stranger
-on the internet sudo access to your computer.
+You are currently on the `source` branch.
 
-don't believe me? go ahead and try it:
+## don't run sudo pip
+
+running `sudo pip install` is dangerous. don't believe me? go ahead and try it:
 
 ```
 sudo pip install russian_roulette
 ```
+
+## links
+
+on charlesreid1.com:
+
+* dont-sudo-pip static site (pages.charlesreid1.com): [https://pages.charlesreid1.com/dont-sudo-pip](https://pages.charlesreid1.com/dont-sudo-pip)
+
+* dont-sudo-pip repo (git.charlesreid1.com): [https://git.charlesreid1.com/charlesreid1/dont-sudo-pip](https://git.charlesreid1.com/charlesreid1/dont-sudo-pip)
+
+mirrors on github.com:
+
+* dont-sudo-pip static site (github pages): [https://charlesreid1.github.io/dont-sudo-pip](https://charlesreid1.github.io/dont-sudo-pip)
+
+* dont-sudo-pip repo (github): [https://github.com/charlesreid1/dont-sudo-pip](https://github.com/charlesreid1/dont-sudo-pip)
+
 
