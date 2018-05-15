@@ -27,7 +27,7 @@ TEMPLATE_PAGES = {
 }
 
 INTROBKG='img/black.jpg'
-LINKSBKG='img/splash.jpg'
+LINKSBKG='img/moon.jpg'
 
 # img/ should be in content/
 # available at <url>/img
@@ -57,7 +57,7 @@ ABOUT_TEXT = """
 
 **You're paranoid. What's the big deal?**
 
-Running `sudo pip install` is insanely dangerous. It is equivalent to giving a complete stranger root access on your machine.  
+Running `sudo pip install package-x` is insanely dangerous. It is equivalent to giving a complete stranger root access on your machine.  
 You run pip as sudo, and pip runs setup.py as sudo, and setup.py can run system commands.
 
 ...in case you're wondering, that's bad.
@@ -80,16 +80,31 @@ Second, **unintentional vulnerabilities**. Developers of a package may unintenti
 a security hole that, when run as root, turns a minor security risk into a major one.
 Say hello to bad dudes cruising the internet.
 
-Third, **malicious packages**. People do evil shit, especially when money's involved.
+Third, **you could squash your system python**. Many modern operating systems
+come with a system python that should be updated infrequently. Tacking on a sudo 
+command could install packages that break your system.
+
+Last, **malicious packages**. People do evil shit, especially when money's involved.
 
 ![some men just wanna watch the world burn](img/burn.gif)
 
 <br />
 <br />
 
-**How do I change my mindset?**
+**What should I do instead?**
 
-To install Python packages (even through pip), you must run a setup.py file, at some point in the process.
+Use [pyenv](https://github.com/pyenv/pyenv) to maintain separate, side-by-side versions of Python.
+
+Use [virtualenv](https://virtualenv.pypa.io/en/stable/) to install software into an isolated Python environment.
+
+Add the `--user` flag to install to your home directory, obviating the need for sudo: `pip install --user package-x`
+
+(At the very least, set up your Python so it doesn't require sudo access each time it installs things.)
+
+<br />
+<br />
+
+**How do I adjust my mindset?**
 
 So just remind yourself of this, each time you type pip: 
 
@@ -115,22 +130,26 @@ ABOUT_DESCRIPTION = about_md.convert(ABOUT_TEXT)
 # -----------
 
 
+
 def make_pages():
     descr = ""
 
-    # 
-    # 
-    # On The Web
-    # 
-    # 
 
-    descr += "<h3>Paradise Lost Bot Flock On The Web</h3>"
+
+    #############################
+    # links around the web
+
+    descr += "<h3>Links</h3>"
 
     # items format:     [ button text,    href url,    fa-icon ]
     items  = [
-                ["git.charlesreid1.com/bots/b-ginsberg",  "https://git.charlesreid1.com/bots/b-ginsberg",   "code-fork"],
-                ["github.com/charlesreid1/ginsberg",      "https://github.com/charlesreid1/ginsberg",       "github"],
-                ["pages.charlesreid1.com/b-ginsberg",     "https://pages.charlesreid1.com/b-ginsberg",      "globe"],
+                ["python security",                       "https://www.python.org/news/security/",                       "globe"],
+                ["pyto squatting project",                "https://www.pytosquatting.org/",                              "globe"],
+                ["pypi hit by typosquatting sneak attack","https://tinyurl.com/y7gdjjne",                                "globe"],
+                ["typosquatting package managers",        "https://tinyurl.com/zdsk8ok",                                 "globe"],
+                ["measures taken by python security team","https://tinyurl.com/ydeynzjn",                                "globe"],
+                ["fedora wiki: making sudo pip safe",     "https://fedoraproject.org/wiki/Changes/Making_sudo_pip_safe", "globe"],
+                ["stack overflow: use a virtual env",    "https://stackoverflow.com/a/15028735",                         "globe"],
             ]
 
     for item in items:
@@ -144,43 +163,55 @@ def make_pages():
 
     descr += "\n"
 
-    # 
-    # 
-    # On The Twitter
-    # 
-    # 
 
-    descr += "<h3>Ginsberg Bot Flock On Twitter</h3>"
 
-    poems = ["america",
-             "auntrose",
-             "chicago",
-             "cosmo",
-             "dc",
-             "deathfame",
-             "deathfronts",
-             "ecologue",
-             "elegy",
-             "fiveam",
-             "greyhound",
-             "hospital",
-             "howl",
-             "kaddish",
-             "lion",
-             "money",
-             "organ",
-             "sunflower",
-             "supermarket"]
 
-    for poem in poems:
-        handle = "gbf_%s"%(poem)
-        button_text = "@%s"%(handle)
-        button_link = "https://twitter.com/%s"%(handle)
-        button_icon = "twitter"
+    #############################
+    # software 
+
+    descr += "<h3>Software</h3>"
+
+    # items format:     [ button text,    href url,    fa-icon ]
+    items  = [
+                ["virtualenv documentation",              "https://virtualenv.pypa.io/en/stable/",                       "globe"],
+                ["pyenv documentation",                   "https://github.com/pyenv/pyenv",                              "globe"],
+                ["pyenv installer",                       "https://github.com/pyenv/pyenv-installer",                    "globe"],
+            ]
+
+    for item in items:
+        button_text = item[0]
+        button_link = item[1]
+        button_icon = item[2]
 
         descr += "<p><a class=\"btn btn-default btn-lg\" href=\"%s\">"%(button_link)
         descr += "<i class=\"fa fa-fw fa-2x fa-%s\"></i> %s"%(button_icon, button_text)
         descr += "</a></p>\n"
+
+    descr += "\n"
+
+
+    #############################
+    # links to source/page
+
+    descr += "<h3>Source</h3>"
+
+    # items format:     [ button text,    href url,    fa-icon ]
+    items  = [
+                ["git.charlesreid1.com/charlesreid1/dont-sudo-pip",     "https://git.charlesreid1.com/charlesreid1/dont-sudo-pip", "code-fork"],
+                ["github.com/charlesreid1/dont-sudo-pip",               "https://github.com/charlesreid1/dont-sudo-pip",           "github"],
+                ["pages.charlesreid1.com/dont-sudo-pip (you are here)", "https://pages.charlesreid1.com/dont-sudo-pip",            "globe"],
+            ]
+
+    for item in items:
+        button_text = item[0]
+        button_link = item[1]
+        button_icon = item[2]
+
+        descr += "<p><a class=\"btn btn-default btn-lg\" href=\"%s\">"%(button_link)
+        descr += "<i class=\"fa fa-fw fa-2x fa-%s\"></i> %s"%(button_icon, button_text)
+        descr += "</a></p>\n"
+
+    descr += "\n"
 
     descr += "\n"
 
