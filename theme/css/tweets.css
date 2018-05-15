@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+/*
+ * https://stackoverflow.com/a/14676665
+ * https://dev.twitter.com/web/embedded-tweets/css
+ */
+
+blockquote.twitter-tweet {
+  border-color: #eee #ddd #bbb;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+}
+
+blockquote.twitter-tweet.ubuntu {
+  font-family: "Ubuntu Mono", "Helvetica Neue", Roboto, sans-serif;
+  font-size: 16px;
+}
+
+blockquote.twitter-tweet.playfair {
+  font-family: "Libre Baskerville", Roboto, sans-serif;
+  font-size: 16px;
+}
+
+blockquote.twitter-tweet.roboto {
+  font-family: "Roboto Slab", Roboto, sans-serif;
+  font-size: 16px;
+}
+
+blockquote.twitter-tweet p {
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 24px;
+}
+
+
+
+blockquote.twitter-tweet a {
+  color: inherit;
+  font-weight: normal;
+  text-decoration: none;
+  outline: 0 none;
+}
+
+blockquote.twitter-tweet a:hover,
+blockquote.twitter-tweet a:focus {
+  text-decoration: underline;
+}

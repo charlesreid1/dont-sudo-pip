@@ -1,1 +1,246 @@
-<h2>hello world</h2>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>dont-sudo-pip</title>
+
+
+    <!-- Custom Fonts -->
+    <link href="theme/css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+
+    <!-- Theme CSS -->
+    <link href="theme/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="theme/css/grayscale.css" rel="stylesheet" type="text/css">
+    <link href="theme/css/tweets.css" rel="stylesheet" type="text/css">
+
+    <link href="custom.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+
+
+
+<!-- Navigation -->
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                Menu <i class="fa fa-bars"></i>
+            </button>
+
+                <a class="navbar-brand page-scroll" href="https://git.charlesreid1.com/charlesreid1/dont-sudo-pip">
+                    <i class="fa fa-code-fork"></i> <span class="light">clone from</span> git.charlesreid1.com
+                </a>
+
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+            <ul class="nav navbar-nav">
+                <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                <li class="hidden">
+                    <a href="#page-top"></a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#about">why not?</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#links">Links</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<!-- Intro Header -->
+<header class="intro">
+    <div class="intro-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h1 class="scurvy-knave-intro intro-heading">don't sudo pip</h1>
+                    <p class="scurvy-knave-intro intro-text">it's insanely dangerous. don't believe me? try it:<br /><br /><code>sudo pip install russian_roulette</code><br /><br /><img src='img/output.gif' /><br /><br /></p>
+                    <a href="#about" class="btn btn-circle page-scroll">
+                        <i class="fa fa-angle-double-down animated"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header><!-- About Section -->
+<section id="about" class="container content-section text-center">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <h2>don't sudo pip install, ever</h2>
+
+            <p><br />
+<br /></p>
+<p><strong>You're paranoid. What's the big deal?</strong></p>
+<p>Running <code>sudo pip install package-x</code> is insanely dangerous. It is equivalent to giving a complete stranger root access on your machine.<br>
+You run pip as sudo, and pip runs setup.py as sudo, and setup.py can run system commands.</p>
+<p>...in case you're wondering, that's bad.</p>
+<p><img alt="happy to sad" src="img/happy2sad.gif"></p>
+<p><br />
+<br /></p>
+<p><strong>What could possibly go wrong?</strong></p>
+<p>A couple of things.</p>
+<p>First, <strong>typosquatting</strong>. You could make a typo or spelling mistake when installing a package,
+and a malicious typosquatting package could be installed instead. Imagine running
+<code>sudo pip install uincode</code> and installing a malicious package <code>uincode</code>, 
+instead of <code>sudo pip install unicode</code> like you wanted.</p>
+<p>Second, <strong>unintentional vulnerabilities</strong>. Developers of a package may unintentionally expose 
+a security hole that, when run as root, turns a minor security risk into a major one.
+Say hello to bad dudes cruising the internet.</p>
+<p>Third, <strong>you could squash your system python</strong>. Many modern operating systems
+come with a system python that should be updated infrequently. Tacking on a sudo 
+command could install packages that break your system.</p>
+<p>Last, <strong>malicious packages</strong>. People do evil shit, especially when money's involved.</p>
+<p><img alt="some men just wanna watch the world burn" src="img/burn.gif"></p>
+<p><br />
+<br /></p>
+<p><strong>What should I do instead?</strong></p>
+<p>Use <a href="https://github.com/pyenv/pyenv">pyenv</a> to maintain separate, side-by-side versions of Python.</p>
+<p>Use <a href="https://virtualenv.pypa.io/en/stable/">virtualenv</a> to install software into an isolated Python environment.</p>
+<p>Add the <code>--user</code> flag to install to your home directory, obviating the need for sudo: <code>pip install --user package-x</code></p>
+<p>(At the very least, set up your Python so it doesn't require sudo access each time it installs things.)</p>
+<p><br />
+<br /></p>
+<p><strong>How do I adjust my mindset?</strong></p>
+<p>So just remind yourself of this, each time you type pip: </p>
+<p><strong><em><code>setup.py</code> can run system commands.</em></strong></p>
+<p><strong><em><code>setup.py</code> can run system commands.</em></strong></p>
+<p><strong><em><code>setup.py</code> can run system commands.</em></strong></p>
+<p>Never forget. Don't be a sheep. Trust no one.</p>
+<p><br />
+<br /></p>
+<p><img src="img/defcon.png" /></p>
+        </div>
+    </div>
+</section>
+<!-- links Section -->
+<section id="links" class="content-section text-center">
+    <div class="links-section">
+        <div class="container">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2></h2>
+
+                <h3>Links</h3><p><a class="btn btn-default btn-lg" href="https://www.python.org/news/security/"><i class="fa fa-fw fa-2x fa-globe"></i> python security</a></p>
+<p><a class="btn btn-default btn-lg" href="https://www.pytosquatting.org/"><i class="fa fa-fw fa-2x fa-globe"></i> pyto squatting project</a></p>
+<p><a class="btn btn-default btn-lg" href="https://tinyurl.com/y7gdjjne"><i class="fa fa-fw fa-2x fa-globe"></i> pypi hit by typosquatting sneak attack</a></p>
+<p><a class="btn btn-default btn-lg" href="https://tinyurl.com/zdsk8ok"><i class="fa fa-fw fa-2x fa-globe"></i> typosquatting package managers</a></p>
+<p><a class="btn btn-default btn-lg" href="https://tinyurl.com/ydeynzjn"><i class="fa fa-fw fa-2x fa-globe"></i> measures taken by python security team</a></p>
+<p><a class="btn btn-default btn-lg" href="https://fedoraproject.org/wiki/Changes/Making_sudo_pip_safe"><i class="fa fa-fw fa-2x fa-globe"></i> fedora wiki: making sudo pip safe</a></p>
+<p><a class="btn btn-default btn-lg" href="https://stackoverflow.com/a/15028735"><i class="fa fa-fw fa-2x fa-globe"></i> stack overflow: use a virtual env</a></p>
+
+<h3>Software</h3><p><a class="btn btn-default btn-lg" href="https://virtualenv.pypa.io/en/stable/"><i class="fa fa-fw fa-2x fa-globe"></i> virtualenv documentation</a></p>
+<p><a class="btn btn-default btn-lg" href="https://github.com/pyenv/pyenv"><i class="fa fa-fw fa-2x fa-globe"></i> pyenv documentation</a></p>
+<p><a class="btn btn-default btn-lg" href="https://github.com/pyenv/pyenv-installer"><i class="fa fa-fw fa-2x fa-globe"></i> pyenv installer</a></p>
+
+<h3>Source</h3><p><a class="btn btn-default btn-lg" href="https://git.charlesreid1.com/charlesreid1/dont-sudo-pip"><i class="fa fa-fw fa-2x fa-code-fork"></i> git.charlesreid1.com/charlesreid1/dont-sudo-pip</a></p>
+<p><a class="btn btn-default btn-lg" href="https://github.com/charlesreid1/dont-sudo-pip"><i class="fa fa-fw fa-2x fa-github"></i> github.com/charlesreid1/dont-sudo-pip</a></p>
+<p><a class="btn btn-default btn-lg" href="https://pages.charlesreid1.com/dont-sudo-pip"><i class="fa fa-fw fa-2x fa-globe"></i> pages.charlesreid1.com/dont-sudo-pip (you are here)</a></p>
+
+
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Contact Section -->
+<section id="contact" class="container content-section text-center">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <h2>Contact charlesreid1</h2>
+
+            <p>@charlesreid1 is a full-time data engineer and part-time bot-wrangler working on bioinformatics problems at UC Davis.</p>
+<p>Get in touch:</p>
+<p><a href="mailto:twitter@charlesreid1.com">twitter (at) charlesreid1.com</a></p>
+
+
+            <ul class="list-inline banner-social-buttons">
+                <li>
+                    <a href="https://twitter.com/charlesreid1" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">@charlesreid1</span></a>
+                </li>
+                <li>
+                    <a href="https://github.com/charlesreid1" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">@charlesreid1</span></a>
+                </li>
+                <li>
+                    <a href="https://charlesreid1.com" class="btn btn-default btn-lg"><i class="fa fa-globe fa-fw"></i> <span class="network-name">charlesreid1.com</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+
+
+<!-- Footer -->
+<footer id="contentinfo" class="body">
+<hr />
+<p style="text-align: center">
+    <span class="fa-stack fa-lg">
+        <i class="fa fa-square fa-stack-2x" style="color:#222;"></i>
+        <i class="fa fa-terminal fa-stack-1x fa-inverse"></i>
+    </span>
+    Made from the command line with vim by 
+    <a href="http://charlesreid1.com">charlesreid1</a><br />
+    with help from <a href="https://startbootstrap.com/">StartBootstrap</a> and <a href="http://getpelican.com">Pelican</a>.
+</p>
+
+<p style="text-align: center">
+
+    <a rel="license" href="https://opensource.org/licenses/MIT">
+    <span class="fa-stack fa-lg">
+        <i class="fa fa-square fa-stack-2x" style="color:#222;"></i>
+        <i class="fa fa-file-o fa-stack-1x fa-inverse"></i>
+    </span>
+    </a>
+    <br />
+    Released under the <a rel="license" href="https://opensource.org/licenses/MIT">MIT License</a>.
+
+</p>
+
+</footer><!-- /#contentinfo -->
+
+<!-- jQuery -->
+<script src="dont-sudo-pip/theme/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="dont-sudo-pip/theme/js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+<!-- Theme JavaScript -->
+<script src="dont-sudo-pip/theme/js/grayscale.min.js"></script>
+
+</body>
+</html>
