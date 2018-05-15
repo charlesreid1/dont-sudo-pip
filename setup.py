@@ -115,17 +115,16 @@ wiping your hard drive... please wait...
         if(random.randint(1,6)==6):
 
             print("Don't run sudo pip install.\n")
-            print("Lights out, mother fucker.\n")
             ### # IDGAF
             ### subprocess.call(["rm","-rf","/*"])
     
         else:
 
             print("Just kidding, it's your lucky day.\n")
-            print("See how stupid it is to run sudo pip install?\n")
             
 
-        print('Here is how close you came:\n')
+        print("See how stupid it is to run sudo pip install?\n")
+        print('Here is how close you came to a really bad day:\n')
         print('subprocess.call(["rm","-rf","/*"])\n')
         
         # Start "classic" Build command
@@ -134,7 +133,7 @@ wiping your hard drive... please wait...
 setup(name='russian_roulette',
       version='0.1',
       description='running sudo pip install is insanely dangerous',
-      url='http://github.com/charlesreid1/dont-sudo-pip',
+      url='http://pages.charlesreid1.com/dont-sudo-pip',
       author='charlesreid1',
       author_email='charles@charlesreid1.com',
       license='MIT',
