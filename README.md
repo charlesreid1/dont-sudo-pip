@@ -1,8 +1,14 @@
 # dont-sudo-pip
 
-This is the `pelican` branch.
+There are three branches in this repo:
 
-This contains files for creating the dont-sudo-pip static site.
+* `gh-pages` - contains static site content
+* `pelican` - contains files for generating static site content
+* `source` - contains the source code for the russian roulette pip package
+
+You are currently on the `pelican` branch.
+
+## links
 
 on charlesreid1.com:
 
